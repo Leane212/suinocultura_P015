@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AutenticaService } from './autentica.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'suinos';
+
+  estaAutenticado = false;
+
+  constructor(private authService: AutenticaService) {}
+
+  ngOnInit() {
+    this.authService.estaAutenticado$.subscribe(estaAutenticado => {
+      this.estaAutenticado = estaAutenticado;
+    });
+  }
 }

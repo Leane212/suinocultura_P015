@@ -11,12 +11,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListarSuinosComponent } from './listar-suinos/listar-suinos.component';
 import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { AutenticaInterceptor } from './autentica.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'cadastro-suinos', component: CadastroSuinosComponent },
   { path: 'listar', component: ListarSuinosComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'autenticacao', component : AutenticacaoComponent},
+  { path: '', redirectTo: '/autenticacao', pathMatch: 'full' },
 ];
 
 @NgModule({
@@ -37,7 +42,10 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync(),
+    {provide: HTTP_INTERCEPTORS, useClass: AutenticaInterceptor, multi : true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
