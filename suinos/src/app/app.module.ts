@@ -9,11 +9,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListarSuinosComponent } from './listar-suinos/listar-suinos.component';
+import { EditarComponent } from './editar/editar.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'cadastro-suinos', component: CadastroSuinosComponent },
-  { path: 'listar', component: ListarSuinosComponent },
+  { path: 'listar-suinos', component: ListarSuinosComponent },
+  { path: 'editarCadastro/:id', component: EditarComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
@@ -22,7 +25,8 @@ const routes: Routes = [
     AppComponent,
     CadastroSuinosComponent,
     HomeComponent,
-    ListarSuinosComponent
+    ListarSuinosComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

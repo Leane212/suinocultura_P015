@@ -1,1 +1,29 @@
-<p>listar-suinos works!</p>
+<p *ngIf="loadedSuino.length < 1">Não existem consultas cadastradas!</p>
+<table class="tickets-table" *ngIf="loadedSuino.length >=1">
+    <thead>
+      <tr>
+        <th>Brinco do animal: </th>
+        <th>Brinco do pai: </th>
+        <th>Brinco da mãe: </th>
+        <th>Data de nascimento: </th>
+        <th>Data da saída: </th>
+        <th>Status: </th>
+        <th>Sexo do animal: </th>
+        <th>Idade do animal: </th>
+        <th><button (click)="apagarTudo()">Apagar Tudo</button></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let suino of loadedSuino">
+        <td>{{ suino.brincoAnimal }}</td>
+        <td>{{ suino.brincoPai }}</td>
+        <td>{{ suino.brincoMae }}</td>
+        <td>{{ suino.dataNascimento }}</td>
+        <td>{{ suino.dataSaida }}</td>
+        <td>{{ suino.status }}</td>
+        <td>{{ suino.sexo }}</td>
+        <td colspan="1">{{ suino.brincoAnimal }}</td>
+        <td><button type="button" class="btnEditar" routerLink="/editar/{{suino.id}}">Editar</button></td>
+      </tr>
+    </tbody>
+  </table>

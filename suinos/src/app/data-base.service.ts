@@ -8,7 +8,7 @@ import { map } from 'rxjs';
 })
 export class DataBaseService {
 
-  loadedConsulta: Suinos[] = [];
+  loadedSuino: Suinos[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -46,5 +46,24 @@ export class DataBaseService {
     );
   }
 
+  getSuino(id:string) {
+    return this.http.get<Suinos>(`https://suino-9136e-default-rtdb.firebaseio.com/suinos/${id}.json`);
+  }
+
+  editarCadastro(id:string, suinoData: { brincoAnimal: string, 
+                                          brincoPai: string, 
+                                          brincoMae: string, 
+                                          dataNascimento: string, 
+                                          dataSaida: string,
+                                          status: string, 
+                                          sexo: string
+                                      })
+  {
+    return this.http.put(`https://suino-9136e-default-rtdb.firebaseio.com/suinos/${id}.json`, suinoData, {observe: 'response'});
+  }
+
+  apagarTodosCadastros() {
+    return this.http.delete('https://suino-9136e-default-rtdb.firebaseio.com/suinos.json');
+  }
 
 }

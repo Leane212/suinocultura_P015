@@ -1,0 +1,69 @@
+<form [formGroup]="formSuinos" (ngSubmit)="salvar()" class="form-container">
+    
+    <div *ngIf="formularioInvalido" class="error-message">
+        O formulário contém erros. Por favor, corrija-os antes de enviar.
+    </div>
+    
+    <div class="form-group">
+        <label for="brincoAnimal">Brinco do animal:</label>
+        <input formControlName="brincoAnimal" id="brincoAnimal" name="brincoAnimal" class="form-control"> 
+        <span class="error-message" *ngIf=" !formSuinos.get('brincoAnimal')?.valid && formSuinos.get('brincoAnimal')?.touched">
+            Brinco do animal não deve ser nulo e deve conter somente números.
+        </span>
+    </div>
+    
+    <div class="form-group">
+        <label for="brincoPai">Brinco do pai:</label>
+        <input type="text" id="brincoPai" formControlName="brincoPai" class="form-control">
+        <span class="error-message" *ngIf=" !formSuinos.get('brincoPai')?.valid && formSuinos.get('brincoPai')?.touched">
+            Brinco do pai não deve ser nulo e deve conter somente números.
+        </span>
+    </div>
+    
+    <div class="form-group">  
+        <label for="brincoMae">Brinco da mãe:</label>
+        <input type="text" id="brincoMae" name="brincoMae" formControlName="brincoMae" class="form-control">
+        <span class="error-message" *ngIf="!formSuinos.get('brincoMae')?.valid && formSuinos.get('brincoMae')?.touched">
+            Brinco da mãe não deve ser nulo e deve conter somente números.
+        </span>
+    </div>
+
+    <div class="form-group">  
+        <label for="dataNascimento">Data de nascimento:</label>
+        <input formControlName="dataNascimento" id="dataNascimento" name="dataNascimento" type="date" class="form-control"> 
+        <span class="error-message" *ngIf="!formSuinos.get('dataNascimento')?.valid && formSuinos.get('dataNascimento')?.touched">
+            Insira dia mes e ano.
+        </span>
+    </div>
+
+    <div class="form-group">  
+        <label for="dataSaida">Data da saída:</label>
+        <input formControlName="dataSaida" id="dataSaida" name="dataSaida" type="date" class="form-control"> 
+        <span class="error-message" *ngIf="!formSuinos.get('dataSaida')?.valid && formSuinos.get('dataSaida')?.touched">
+            Insira dia mes e ano.
+        </span>
+    </div>
+
+    <div class="form-group">  
+        <label for="status">Status:</label>
+        <select id="status" formControlName="status">
+            <option value="ativo">Ativo</option>
+            <option value="vendido">Vendido</option>
+            <option value="morto">Morto</option>
+        </select> 
+    </div> 
+    
+
+    <div class="form-group">  
+        <label for="sexo">Sexo do animal:</label>
+        <select id="sexo" formControlName="sexo">
+            <option value="feminino">Feminino</option>
+            <option value="masculino">Masculino</option>
+        </select> 
+    </div> 
+    
+  
+    <button type="submit">Salvar</button>   
+
+</form>
+
