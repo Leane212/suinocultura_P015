@@ -9,6 +9,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListarSuinosComponent } from './listar-suinos/listar-suinos.component';
+import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -22,7 +24,9 @@ const routes: Routes = [
     AppComponent,
     CadastroSuinosComponent,
     HomeComponent,
-    ListarSuinosComponent
+    ListarSuinosComponent,
+    AutenticacaoComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
