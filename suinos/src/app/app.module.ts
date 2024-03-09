@@ -19,8 +19,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'cadastro-suinos', component: CadastroSuinosComponent },
   { path: 'listar', component: ListarSuinosComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'autenticacao', component : AutenticacaoComponent},
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component : AutenticacaoComponent},
   { path: '', redirectTo: '/autenticacao', pathMatch: 'full' },
 ];
 
