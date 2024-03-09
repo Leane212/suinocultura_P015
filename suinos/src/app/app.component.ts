@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AutenticaService } from './autentica.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'suinos';
+
+  constructor(private autenticaService: AutenticaService) { }
+
+  ngOnInit(): void {
+    this.autenticaService.autoLogin();
+  }
 }
