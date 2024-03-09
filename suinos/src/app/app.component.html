@@ -1,7 +1,7 @@
 <div class="container">
   <div class="header">
       <div class="logo">SUINO</div>    
-      <div class="nav-links">
+      <div class="nav-links" *ngIf="estaAutenticado">
           <a routerLink="/home" routerLinkActive="active">Home</a>
           <a routerLink="/cadastro-suinos" routerLinkActive="active">Adicionar Suinos</a>
           <a routerLink="/listar" routerLinkActive="active">Listar Suinos</a>
