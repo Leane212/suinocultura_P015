@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Suinos } from './suino.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { map } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -64,6 +64,10 @@ export class DataBaseService {
 
   apagarTodosCadastros() {
     return this.http.delete('https://suino-9136e-default-rtdb.firebaseio.com/suinos.json');
+  }
+
+  deletarSuino(id: string): Observable<void> {
+    return this.http.delete<void>('https://suino-9136e-default-rtdb.firebaseio.com/suinos/' + id + '.json');
   }
 
 }

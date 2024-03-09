@@ -56,7 +56,7 @@ export class EditarComponent {
 
   rediracionaPrincipal(){
     setTimeout(() => {
-     this.rotas.navigate(['listar-suinos']);
+     this.rotas.navigate(['/listar-suinos']);
     }, 2000);
     
   }

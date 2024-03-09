@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListarSuinosComponent } from './listar-suinos/listar-suinos.component';
 import { EditarComponent } from './editar/editar.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { IdadePipe } from './idade.pipe';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -26,7 +27,8 @@ const routes: Routes = [
     CadastroSuinosComponent,
     HomeComponent,
     ListarSuinosComponent,
-    EditarComponent
+    EditarComponent,
+    IdadePipe
   ],
   imports: [
     BrowserModule,

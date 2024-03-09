@@ -9,6 +9,12 @@ import { DataBaseService } from '../data-base.service';
 })
 export class ListarSuinosComponent {
   loadedSuino:Suinos[] = [];
+  filtroBrincoPai: string | null = null;
+  filtroBrincoMae: string | null = null;
+  filtroDataNascimento: string | null = null;
+  filtroDataSaida: string | null = null;
+  filtroSexo: string | null = null;
+  filtroStatus: string | null = null;
   
   constructor(private bancoService:DataBaseService) { }
 
@@ -36,6 +42,39 @@ export class ListarSuinosComponent {
       console.log('Apagou tudo');
       this.loadedSuino = [];
     });
+  }
+
+  deletarSuino(id: string) {
+    this.bancoService.deletarSuino(id).subscribe(() => {
+      this.getAnimal();
+    });
+  }
+
+  aplicarFiltro() {
+    
+  let suinosFiltrados = this.loadedSuino.slice();
+
+  if (this.filtroBrincoPai) {
+    suinosFiltrados = suinosFiltrados.filter(suino => suino.brincoPai === this.filtroBrincoPai);
+  }
+  if (this.filtroBrincoMae) {
+    suinosFiltrados = suinosFiltrados.filter(suino => suino.brincoMae === this.filtroBrincoMae);
+  }
+
+  if (this.filtroDataNascimento) {
+    suinosFiltrados = suinosFiltrados.filter(suino => suino.dataNascimento === this.filtroDataNascimento);
+  }
+  if (this.filtroDataSaida) {
+    suinosFiltrados = suinosFiltrados.filter(suino => suino.dataSaida === this.filtroDataSaida);
+  }
+  if (this.filtroSexo) {
+    suinosFiltrados = suinosFiltrados.filter(suino => suino.sexo === this.filtroSexo);
+  }
+  if (this.filtroStatus) {
+    suinosFiltrados = suinosFiltrados.filter(suino => suino.status === this.filtroStatus);
+  }
+
+  this.loadedSuino = suinosFiltrados;
   }
 
 }
