@@ -1,17 +1,20 @@
 <div class="container">
   <div class="header">
-      <div class="logo">SUINO</div>    
+      <div class="logo">SUÍNO</div>    
       <div class="nav-links">
-          <a routerLink="/home" routerLinkActive="active">Home</a>
-          <a routerLink="/cadastro-suinos" routerLinkActive="active">Adicionar Suinos</a>
-          <a routerLink="/listar-suinos" routerLinkActive="active">Listar Suinos</a>
+          <button mat-flat-button class="home" title="Clique aqui para voltar para a tela principal" routerLink="/home" routerLinkActive="active">HOME</button>
+          <button mat-flat-button class="cadastroSuino" title="Clique aqui para cadastrar um suíno" routerLink="/cadastro-suinos" routerLinkActive="active">CADASTRO DE SUÍNOS</button>
+          <button mat-flat-button class="listagemSuino" title="Clique aqui para ver a listagem de suínos cadastrados" routerLink="/listar-suinos" routerLinkActive="active">LISTAGEM DE SUÍNOS</button>
+          <button mat-flat-button class="controlePeso" title="Clique aqui para acessar o controle de peso dos suínos">CONTROLE DE PESO (adicionar link)</button>
+          <button mat-flat-button class="cadastroPeso" title="Clique aqui para cadastrar um novo peso de suíno">CADASTRO DE PESO (adicionar link)</button>
+          <button mat-flat-button class="edicaoPeso" title="Clique aqui para editar o peso de um suíno cadastrado">EDIÇÃO DE PESO (adicionar link)</button>
       </div>
   </div>
   <div class="content">
     <router-outlet></router-outlet>
   </div>
   <div class="footer">
-      <p>&copy; 2024 Grupo: Caio G. Gabriel Girleide M. Leane S. & Myllena S. Todos os direitos reservados. <a href="#">Política de Privacidade</a> | <a href="#">Termos do serviço</a></p>
+      <p>&copy; 2024 Grupo: Caio G., Gabriel S., Girleide M., Leane S. & Myllena S. Todos os direitos reservados. <a href="#">Política de Privacidade</a> | <a href="#">Termos do serviço</a></p>
   </div>
 </div>
 

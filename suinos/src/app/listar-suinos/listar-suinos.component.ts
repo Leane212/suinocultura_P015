@@ -8,6 +8,7 @@ import { DataBaseService } from '../data-base.service';
   styleUrl: './listar-suinos.component.css'
 })
 export class ListarSuinosComponent {
+  displayedColumns: string[] = ['brincoAnimal', 'brincoPai', 'brincoMae', 'dataNascimento', 'dataSaida', 'status', 'sexo', 'idade', 'actions'];
   loadedSuino:Suinos[] = [];
   filtroBrincoPai: string | null = null;
   filtroBrincoMae: string | null = null;
@@ -75,6 +76,15 @@ export class ListarSuinosComponent {
   }
 
   this.loadedSuino = suinosFiltrados;
+  }
+
+  limparFiltro(){
+    this.filtroBrincoPai = null;
+    this.filtroBrincoMae = null;
+    this.filtroSexo = null;
+    this.filtroDataNascimento = null;
+    this.filtroDataSaida = null;
+    this.getAnimal();
   }
 
 }

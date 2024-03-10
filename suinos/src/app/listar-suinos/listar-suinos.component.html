@@ -3,24 +3,52 @@
 </div>
 
 <div class="filtros">
-  <label for="filtroBrincoPai">Filtrar por brinco do pai:</label>
-  <input type="text" id="filtroBrincoPai" [(ngModel)]="filtroBrincoPai" (change)="aplicarFiltro()">
-  
-  <label for="filtroBrincoMae">Filtrar por brinco da mãe:</label>
-  <input type="text" id="filtroBrincoMae" [(ngModel)]="filtroBrincoMae" (change)="aplicarFiltro()">
-  
-  <label for="filtroDataNascimento">Filtrar por data de nascimento:</label>
-  <input type="date" id="filtroDataNascimento" [(ngModel)]="filtroDataNascimento" (change)="aplicarFiltro()">
-  
-  <label for="filtroDataSaida">Filtrar por data de saída:</label>
-  <input type="date" id="filtroDataSaida" [(ngModel)]="filtroDataSaida" (change)="aplicarFiltro()">
-  
-  <label for="filtroSexo">Filtrar por sexo:</label>
-  <input type="text" id="filtroSexo" [(ngModel)]="filtroSexo" (change)="aplicarFiltro()">
-  
-  <label for="filtroStatus">Filtrar por status:</label>
-  <input type="text" id="filtroStatus" [(ngModel)]="filtroStatus" (change)="aplicarFiltro()">
+<mat-card-content>
+  <mat-card-title>
+    Filtros
+  </mat-card-title>
+  <mat-card>
+  <mat-form-field appearance="outline" class="form-field-full">
+    <mat-label for="filtroBrincoPai">Filtrar por brinco do pai:</mat-label>
+    <input matInput type="text" id="filtroBrincoPai" [(ngModel)]="filtroBrincoPai" (change)="aplicarFiltro()">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="form-field-full">
+    <mat-label for="filtroBrincoMae">Filtrar por brinco da mãe:</mat-label>
+    <input matInput type="text" id="filtroBrincoMae" [(ngModel)]="filtroBrincoMae" (change)="aplicarFiltro()">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="form-field-full">
+    <mat-label for="filtroDataNascimento">Filtrar por data de nascimento:</mat-label>
+    <input matInput type="date" id="filtroDataNascimento" [(ngModel)]="filtroDataNascimento" (change)="aplicarFiltro()">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="form-field-full">
+    <mat-label for="filtroDataSaida">Filtrar por data de saída:</mat-label>
+    <input matInput type="date" id="filtroDataSaida" [(ngModel)]="filtroDataSaida" (change)="aplicarFiltro()">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="form-field-full">
+    <mat-label for="filtroSexo">Filtrar por sexo:</mat-label>
+    <input matInput type="text" id="filtroSexo" [(ngModel)]="filtroSexo" (change)="aplicarFiltro()">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="form-field-full">
+    <mat-label for="filtroStatus">Filtrar por status:</mat-label>
+    <input matInput type="text" id="filtroStatus" [(ngModel)]="filtroStatus" (change)="aplicarFiltro()">
+  </mat-form-field>
+
+  <button mat-raised-button (click)="limparFiltro()">Limpar Filtros</button>
+</mat-card>
+</mat-card-content>
 </div>
+
+<mat-card-content>
+  <mat-card-title>
+    Lista de Suínos Cadastrados
+  </mat-card-title>
+  <mat-card>
+
 
 <table class="tickets-table" *ngIf="loadedSuino.length >=1">
   <thead>
@@ -47,9 +75,12 @@
       <td>{{ suino.sexo }}</td>
       <td>{{ suino.dataNascimento | calcularIdade }}</td>
       <td>
-        <button type="button" class="btnEditar" [routerLink]="['/editar', suino.id]">Editar</button>
-        <button type="button" class="btnDeletar" (click)="suino.id && deletarSuino(suino.id)">Deletar</button>
+        <button mat-flat-button type="button" class="btnEditar" [routerLink]="['/editar', suino.id]">Editar</button>
+        <button mat-flat-button type="button" class="btnDeletar" (click)="suino.id && deletarSuino(suino.id)">Deletar</button>
       </td>
     </tr>
   </tbody>
 </table>
+
+</mat-card>
+</mat-card-content>

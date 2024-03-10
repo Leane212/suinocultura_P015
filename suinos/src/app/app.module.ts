@@ -28,6 +28,7 @@ import { MatTableModule } from '@angular/material/table';
 import {MatDividerModule} from '@angular/material/divider';
 import { AutenticaInterceptor } from './autentica.interceptor';
 
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'cadastro-suinos', component: CadastroSuinosComponent },
