@@ -40,6 +40,7 @@ export class CadastroSuinosComponent implements OnInit{
       dataSaida: this.formSuinos.get('dataSaida')?.value,
       status: this.formSuinos.get('status')?.value,
       sexo: this.formSuinos.get('sexo')?.value,
+      pesos: [{ dataDaPesagem: '', peso: 0 }]
     };
   
     console.log(cadastroData);

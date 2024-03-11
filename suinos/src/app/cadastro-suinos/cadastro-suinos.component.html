@@ -1,8 +1,8 @@
 <div class="botoesNav">
-    <button mat-flat-button class="listagemSuino" title="Clique aqui para ver a listagem de suínos cadastrados" routerLink="/listar-suinos" routerLinkActive="active">LISTAGEM DE SUÍNOS</button>
-    <button mat-flat-button class="controlePeso" title="Clique aqui para acessar o controle de peso dos suínos">CONTROLE DE PESO (adicionar link)</button>
-    <button mat-flat-button class="cadastroPeso" title="Clique aqui para cadastrar um novo peso de suíno">CADASTRO DE PESO (adicionar link)</button>
-    <button mat-flat-button class="edicaoPeso" title="Clique aqui para editar o peso de um suíno cadastrado">EDIÇÃO DE PESO (adicionar link)</button>
+    <button mat-flat-button class="listagemSuino" title="Clique aqui para ver a listagem de suínos cadastrados" routerLink="/listar-suinos">LISTAGEM DE SUÍNOS</button>
+    <button mat-flat-button class="controlePeso" title="Clique aqui para acessar o controle de peso dos suínos" routerLink="/controle-pesos"  >CONTROLE DE PESO</button>
+    <button mat-flat-button class="cadastroPeso" title="Clique aqui para cadastrar um novo peso de suíno" routerLink="/cadastro-pesos" routerLinkActive="active">CADASTRO DE PESOS</button>
+    <button mat-flat-button class="edicaoPeso" title="Clique aqui para editar o peso de um suíno cadastrado" routerLink="/editar-pesos">EDIÇÃO DE PESO</button>
 </div>
 <mat-card-content class="conteiner">
 <mat-card class="card-cadastro">
@@ -54,7 +54,7 @@
             <mat-label for="dataNascimento">Data de nascimento:</mat-label>
             <input matInput formControlName="dataNascimento" id="dataNascimento" name="dataNascimento" type="date" class="form-control"> 
         </mat-form-field> 
-        </div>
+    </div>
 
 
     <div class="form-group">  

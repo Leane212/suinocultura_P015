@@ -55,7 +55,6 @@
 .enviar {
     transition: transform 0.3s;
     background-color: #d7b89c;
-    align-self: flex-end;
 }
 
 .enviar:hover {
