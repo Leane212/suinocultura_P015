@@ -29,7 +29,7 @@ export class CadastroPesosComponent implements OnInit{
   criarItemPeso(): FormGroup {
     return this.formConstrutor.group({
       dataDaPesagem: ['', Validators.required],
-      peso: ['', [Validators.required, Validators.pattern("^[0-9]*$")]]
+      peso: ['', [Validators.required, Validators.pattern("^[0-9]*\.?[0-9]+$")]]
     });
   }
 

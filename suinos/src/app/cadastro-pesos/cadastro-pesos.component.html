@@ -40,10 +40,7 @@
                 <div class="form-group">
                     <mat-form-field appearance="outline" class="form-field-full">
                         <mat-label for="peso">Peso:</mat-label>
-                        <input matInput type="number" id="peso" formControlName="peso" class="form-control">
-                        <mat-error class="error-message" *ngIf=" !formSuinos.get('peso')?.valid && formSuinos.get('peso')?.touched">
-                            O peso deve conter somente números.
-                        </mat-error>
+                        <input matInput type="input" id="peso" formControlName="peso" class="form-control">
                     </mat-form-field>
                 </div>
             </div>

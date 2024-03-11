@@ -46,10 +46,10 @@ export class CadastroSuinosComponent implements OnInit{
     console.log(cadastroData);
     this.bancoService.addCadastroSuinos(cadastroData);
     this.formSuinos.reset();
-    this.formularioInvalido = false; 
-    } else {
-      this.formularioInvalido = true; 
-    }
+    this.formularioInvalido = this.formSuinos.valid; // Atualiza a variável de acordo com o estado atual do formulário
+  } else {
+    this.formularioInvalido = true; 
+  }
   }
 
 
