@@ -1,0 +1,72 @@
+.botoesNav {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.botoesNav button:hover {
+    transform: scale(1.1);
+    background-color: #feab8d;
+}
+
+.botoesNav button {
+    background-color: #d7b89c;
+    margin-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+.tickets-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.tickets-table th, .tickets-table td {
+    border: 1px solid #d7b89c;
+    padding: 8px;
+    text-align: left;
+}
+
+.tickets-table th {
+    background-color: #d7b89c;
+}
+
+.btnEditar, .btnDeletar {
+    transition: transform 0.3s;
+}
+
+.btnEditar:hover, .btnDeletar:hover {
+    transform: scale(1.1);
+    background-color: #feab8d;
+}
+
+.limpar {
+    background-color: #d7b89c;
+    transition: transform 0.3s;
+}
+
+.limpar:hover {
+    transform: scale(1.2);
+    background-color: #feab8d;
+}
+
+.filter-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.form-field-half {
+    flex: 1;
+}
+
+.filter-row button {
+    width: 100%;
+}
+
+.filter-row button.limpar {
+    margin-top: 20px;
+}
