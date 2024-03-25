@@ -30,6 +30,8 @@ import { AutenticaInterceptor } from './autentica.interceptor';
 import { CadastroPesosComponent } from './cadastro-pesos/cadastro-pesos.component';
 import { ControlePesosComponent } from './controle-pesos/controle-pesos.component';
 import { EditarPesosComponent } from './editar-pesos/editar-pesos.component';
+import { ListarSelecionaSuinoComponent } from './listar-seleciona-suino/listar-seleciona-suino.component';
+
 
 
 const routes: Routes = [
@@ -56,7 +58,9 @@ const routes: Routes = [
     LoadingSpinnerComponent,
     CadastroPesosComponent,
     ControlePesosComponent,
-    EditarPesosComponent
+    EditarPesosComponent,
+    ListarSelecionaSuinoComponent,
+  
   ],
   imports: [
     BrowserModule,
