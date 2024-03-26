@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Suinos } from '../suino.model';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 import { DataBaseService } from '../data-base.service';
 
 @Component({
@@ -8,8 +9,13 @@ import { DataBaseService } from '../data-base.service';
   styleUrl: './listar-seleciona-suino.component.css'
 })
 export class ListarSelecionaSuinoComponent {
-  displayedColumns: string[] = ['brincoAnimal', 'brincoPai', 'brincoMae', 'dataNascimento', 'dataSaida', 'status', 'sexo', 'idade', 'actions'];
+event: any;
+selectAll(arg0: any) {
+throw new Error('Method not implemented.');
+}
+  displayedColumns: string[] = ['brincoAnimal', 'brincoPai', 'brincoMae', 'dataNascimento', 'dataSaida', 'status', 'sexo', 'idade', ];
   loadedSuino:Suinos[] = [];
+  suinosSelecionados: Suinos[] = [];
   filtroBrincoPai: string | null = null;
   filtroBrincoMae: string | null = null;
   filtroDataNascimento: string | null = null;
@@ -56,7 +62,7 @@ export class ListarSelecionaSuinoComponent {
   }
 
   this.loadedSuino = suinosFiltrados;
-  }
+  };
 
   limparFiltro(){
     this.filtroBrincoPai = null;
@@ -67,4 +73,22 @@ export class ListarSelecionaSuinoComponent {
     this.getAnimal();
   }
 
+  selectAll1(event: MatCheckboxChange) {
+    if (event.checked) {
+      this.suinosSelecionados = [...this.loadedSuino];
+    } else {
+      this.suinosSelecionados = [];
+    }
+  }
+  
+  toggleSelection(suino: Suinos, event: MatCheckboxChange) {
+    if (event.checked) {
+      this.suinosSelecionados.push(suino);
+    } else {
+      const index = this.suinosSelecionados.findIndex(s => s.id === suino.id);
+      if (index !== -1) {
+        this.suinosSelecionados.splice(index, 1);
+      }
+    }
+  }
 }

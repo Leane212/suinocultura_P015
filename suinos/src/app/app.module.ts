@@ -31,6 +31,7 @@ import { CadastroPesosComponent } from './cadastro-pesos/cadastro-pesos.componen
 import { ControlePesosComponent } from './controle-pesos/controle-pesos.component';
 import { EditarPesosComponent } from './editar-pesos/editar-pesos.component';
 import { ListarSelecionaSuinoComponent } from './listar-seleciona-suino/listar-seleciona-suino.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 
@@ -43,7 +44,8 @@ const routes: Routes = [
   { path: 'controle-pesos', component: ControlePesosComponent },
   { path: 'editar-pesos', component: EditarPesosComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: AutenticacaoComponent }
+  { path: 'login', component: AutenticacaoComponent },
+  { path: 'listar-seleciona-suinos', component: ListarSelecionaSuinoComponent },
 ];
 
 @NgModule({
@@ -81,7 +83,8 @@ const routes: Routes = [
     MatProgressSpinnerModule,
     MatTableModule,
     MatDividerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCheckboxModule 
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AutenticaInterceptor, multi: true },
