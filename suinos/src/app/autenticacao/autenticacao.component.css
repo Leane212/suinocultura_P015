@@ -1,8 +1,18 @@
+.loginimg {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: linear-gradient(to bottom,#fdf0e5,#fdf0e5, #ffffff, #ffffff); 
+    background-size: cover;
+    height: 100%;
+}
+
 .container {
     display: flex;
     height: 50%;
     justify-content: center;
     align-items: center;
+    margin-top: 60px;
 }
 
 .conteudo-login {
@@ -14,7 +24,6 @@
 .card-login {
     width: 500px;
     padding: 20px;
-    /* Espaçamento interno do card */
 }
 
 .form-field-full {
@@ -41,5 +50,4 @@
     width: 160px;
     height: 160px;
     margin-top: 30px;
-
 }

@@ -27,6 +27,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import {MatDividerModule} from '@angular/material/divider';
 import { AutenticaInterceptor } from './autentica.interceptor';
+import { CadastroPesosComponent } from './cadastro-pesos/cadastro-pesos.component';
+import { ControlePesosComponent } from './controle-pesos/controle-pesos.component';
+import { EditarPesosComponent } from './editar-pesos/editar-pesos.component';
+import { ListarSelecionaSuinoComponent } from './listar-seleciona-suino/listar-seleciona-suino.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 
 
 const routes: Routes = [
@@ -34,8 +40,12 @@ const routes: Routes = [
   { path: 'cadastro-suinos', component: CadastroSuinosComponent },
   { path: 'listar-suinos', component: ListarSuinosComponent },
   { path: 'editarCadastro/:id', component: EditarComponent },
+  { path: 'cadastro-pesos', component: CadastroPesosComponent },
+  { path: 'controle-pesos', component: ControlePesosComponent },
+  { path: 'editar-pesos', component: EditarPesosComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: AutenticacaoComponent }
+  { path: 'login', component: AutenticacaoComponent },
+  { path: 'listar-seleciona-suinos', component: ListarSelecionaSuinoComponent },
 ];
 
 @NgModule({
@@ -47,7 +57,12 @@ const routes: Routes = [
     EditarComponent,
     IdadePipe,
     AutenticacaoComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    CadastroPesosComponent,
+    ControlePesosComponent,
+    EditarPesosComponent,
+    ListarSelecionaSuinoComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -68,7 +83,8 @@ const routes: Routes = [
     MatProgressSpinnerModule,
     MatTableModule,
     MatDividerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCheckboxModule 
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AutenticaInterceptor, multi: true },

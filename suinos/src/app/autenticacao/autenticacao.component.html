@@ -1,3 +1,4 @@
+<div class="loginimg">
 <mat-card-content class="container">
     <mat-card class="card-login">
       <mat-card-title>{{
@@ -35,7 +36,8 @@
         <button mat-raised-button color="primary" class="full" align="end" (click)="isLogin ? login() : register()"
           [class.align-right]="!isLogin" [disabled]="!loginForm.valid">{{
           isLogin ? 'Entrar' :
-          'Registrar' }}</button>
+          'Registrar' }} </button>
       </mat-card-actions>
     </mat-card>
   </mat-card-content>
+</div>
