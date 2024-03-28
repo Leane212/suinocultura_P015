@@ -32,6 +32,7 @@ import { ControlePesosComponent } from './controle-pesos/controle-pesos.componen
 import { EditarPesosComponent } from './editar-pesos/editar-pesos.component';
 import { ListarSelecionaSuinoComponent } from './listar-seleciona-suino/listar-seleciona-suino.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { CriarServicoComponent } from './criar-servico/criar-servico.component';
 
 
 
@@ -62,6 +63,7 @@ const routes: Routes = [
     ControlePesosComponent,
     EditarPesosComponent,
     ListarSelecionaSuinoComponent,
+    CriarServicoComponent,
   
   ],
   imports: [

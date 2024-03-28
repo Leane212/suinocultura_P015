@@ -1,0 +1,38 @@
+<mat-card-content class="conteiner">
+    <mat-card class="card-cadastro">
+    
+    <mat-card-title class="title">
+        Cadastro de Serviços
+    </mat-card-title>
+    
+    <form [formGroup]="formServico" (ngSubmit)="onSubmit()" class="form-container">
+    <mat-card-content>
+        <div *ngIf="formularioInvalido" class="error-message">
+            <mat-error>
+                O formulário contém erros. Por favor, corrija-os antes de enviar.
+            </mat-error>  
+        </div>
+    
+        <div class="form-group"> 
+            <mat-form-field appearance="outline" class="form-field-full">
+                <mat-label for="dataServico">Data do Serviço:</mat-label>
+                <input matInput formControlName="dataServico" id="dataServico" name="dataServico" type="date" class="form-control"> 
+            </mat-form-field> 
+        </div>
+
+        <div class="form-group">
+            <mat-form-field appearance="outline" class="form-field-full">
+                <mat-label for="obs">Observações:</mat-label>
+                <input matInput type="text" id="obs" formControlName="obs" class="form-control">
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-checkbox (change)="changeChecked(servico)" [checked]="servico.checked" *ngFor="let servico of servicos" formControlName="servicos" [value]="servico.value">{{ servico.value }}</mat-checkbox>
+        </div>
+        <button mat-raised-button class="voltar"  routerLink="/listar-seleciona-suinos">Voltar a Seleção de Suínos</button>
+        <button mat-raised-button class="enviar" type="submit">Enviar</button>
+        
+    </mat-card-content>
+    </form>
+    </mat-card> 
+    </mat-card-content>

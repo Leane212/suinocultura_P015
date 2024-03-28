@@ -81,7 +81,7 @@
       <tbody>
         <tr *ngFor="let suino of loadedSuino">
           <td>
-            <mat-checkbox [checked]="suinosSelecionados.includes(suino)" (change)="toggleSelection(suino, event.checked)"></mat-checkbox>
+            <mat-checkbox [checked]="suinosSelecionados.includes(suino)" (change)="toggleSelection(suino, $event)"></mat-checkbox>
           </td>
           <td>{{ suino.brincoAnimal }}</td>
           <td>{{ suino.brincoPai }}</td>
@@ -94,5 +94,6 @@
         </tr>
       </tbody>
     </table>
+    <button class="enviar" mat-raised-button (click)="enviaSuinos()" routerLink="/cadastro-pesos"> Criar Serviço</button>
   </mat-card>
 </mat-card-content>

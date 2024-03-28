@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Suinos } from '../suino.model';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { DataBaseService } from '../data-base.service';
+import { GerenciaServicoService } from '../gerencia-servico.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-seleciona-suino',
@@ -23,7 +25,7 @@ throw new Error('Method not implemented.');
   filtroSexo: string | null = null;
   filtroStatus: string | null = null;
   
-  constructor(private bancoService:DataBaseService) { }
+  constructor(private bancoService:DataBaseService, private gerenciaServico: GerenciaServicoService,private router: Router) { }
 
   ngOnInit(): void {
     this.getAnimal();
@@ -90,5 +92,10 @@ throw new Error('Method not implemented.');
         this.suinosSelecionados.splice(index, 1);
       }
     }
+  }
+
+  enviaSuinos(){
+    this.gerenciaServico.setSuinosSelecionados(this.suinosSelecionados);
+    this.router.navigate(['criar-servico']);
   }
 }
